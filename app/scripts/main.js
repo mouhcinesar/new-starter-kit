@@ -45,7 +45,7 @@
         // i.e. whether there's an existing service worker.
         if (navigator.serviceWorker.controller) {
           // The updatefound event implies that registration.installing is set:
-          // https://slightlyoff.github.io/ServiceWorker/spec/service_worker/index.html#service-worker-container-updatefound-event
+          // https://slightlyoff.github.io/ServiceWorker/spec/service_worker/index1.html#service-worker-container-updatefound-event
           var installingWorker = registration.installing;
 
           installingWorker.onstatechange = function() {
