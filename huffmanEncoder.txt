@@ -1,0 +1,77 @@
+/*
+* Step 1 : Create Java Class
+*
+*/
+
+public class HuffmanEncoder{
+	
+	// ASCII Alphabet 
+	private static final int ALPHABET_SIZE = 256;
+	
+	static class HuffmanEncodedResult{
+		
+	}
+	
+	// 1- Build frequency Table - Count the frequency of each caractere
+	private static int[] buildFrequencyTable(final String data){
+		final int[] frequency = new int[ALPHABET_SIZE];
+		for(final char caractere : data.toCharArray()){
+			frequency[caractere]++;
+		}
+		return frequency;
+	}
+	// 2 - Build Huffman Tree -> data Structure
+	public  HuffmanEncodedResult compress(final String data){
+		
+		final int[] frequency = buildFrequencyTable(data);
+		
+		return null;
+	}
+	// 3 - Create Class Node and Comper to ==> a method compareTo will be created!
+	static class Node implements Comperable<Node>{
+		private final char character;
+		private final int frequency;
+		private final Node leftChild;
+		private final Node rightChild;
+		
+		private Node(final char character,
+					 final int frequency,
+					 final Node leftChild,
+					 final Node rightChild)
+					{
+				this.character=character;
+				this.frequency=frequency;
+				this.leftChild=leftChild;
+				this.rightChild=rightChild;				
+			}
+			boolean ifLeaf(){
+				
+				return this.leftChild == null && this.rightChild == null;
+			}
+	@Override
+	public int compareTo(final Node that){
+				final int frequencyComparison = Integer.compare(this.frequency, that.frequency);
+		if(frequencyComparison !=0 )
+				return frequencyComparison;
+	  }
+	  	  return Integer.compare(this.character, that.character)
+	}
+	// 4 - to build a root 
+	private static Node buildHuffmanTree(int[] freq){
+		return null;
+	}
+	
+	public String decompress(final HuffmanEncodedResult result){
+		
+		return null;
+	}
+	
+	public static void main(String[] args){
+		//Step number one, 
+		final String test = "abcdeffg";
+		final int [] frequencyTable = buildFrequencyTable(test);
+		
+		System.out.println(frequencyTable);
+	}
+	
+}
