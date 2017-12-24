@@ -1,7 +1,6 @@
-a Edit Mode
-esc Command Mode
-You must be in command mode for these to work:
-:w + enter Save file
-:x + enter Save and exit
-:q + enter exit
-:q! + enter exit without saving
+alias ll='ls -lahG'
+
+if [-f ~/.git-completion.bash]; then
+  source ~/.git-completion.bash
+export PS1='\W$(__git_ps1 "(%s)")--/'
+fi
